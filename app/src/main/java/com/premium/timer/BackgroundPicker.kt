@@ -3,6 +3,7 @@
 package com.premium.timer
 
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -168,9 +169,11 @@ fun BackgroundPickerSheet(
             Spacer(Modifier.height(8.dp))
             OutlinedButton(
                 onClick = {
-                    imagePicker.launch(
-                        ActivityResultContracts.PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
-                    )
+                   imagePicker.launch(
+    PickVisualMediaRequest(
+        ActivityResultContracts.PickVisualMedia.ImageOnly
+    )
+)
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
